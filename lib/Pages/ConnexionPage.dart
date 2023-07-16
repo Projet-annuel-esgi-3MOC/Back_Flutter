@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../Constants/colors.dart';
+import '../WebServices/auth_service.dart';
 import '../Widget/card_widget.dart';
 import '../Widget/logo_widget.dart';
 
@@ -25,13 +26,23 @@ class _ConnexionPageState extends State<ConnexionPage> {
     GoRouter.of(context).go('/inscription');
   }
 
-  void onLoginClicked() {
+  Future<void> onLoginClicked() async {
     if (_formKey.currentState!.validate()) {
       String email = _emailController.text;
       String password = _passwordController.text;
+
+      try {
+        String? token = await AuthService().loginUser(email, password);
+        if (token != null) {
+          print('Connexion réussie avec le token : $token');
+        } else {
+          print('Échec de la connexion');
+        }
+      } catch (e) {
+        print('Erreur de connexion : $e');
+      }
     }
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

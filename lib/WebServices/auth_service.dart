@@ -17,6 +17,7 @@ class AuthService {
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       final message = data['message'];
+      print(response.body);
       return message;
     } else {
       throw Exception('Failed to register user');
