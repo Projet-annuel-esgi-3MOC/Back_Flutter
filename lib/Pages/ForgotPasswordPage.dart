@@ -20,9 +20,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
 
   void onSendClicked() {
     if (_formKey.currentState!.validate()) {
-      // Le champ de formulaire est valide, effectuez les actions d'envoi du mot de passe
       String email = _emailController.text;
-      // Effectuez les actions d'envoi du mot de passe avec la valeur email
     }
   }
 

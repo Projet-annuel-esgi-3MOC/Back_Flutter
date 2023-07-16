@@ -34,12 +34,9 @@ class _ConnexionPageState extends State<ConnexionPage> {
       try {
         String? token = await AuthService().loginUser(email, password);
         if (token != null) {
-          print('Connexion réussie avec le token : $token');
         } else {
-          print('Échec de la connexion');
         }
       } catch (e) {
-        print('Erreur de connexion : $e');
       }
     }
   }

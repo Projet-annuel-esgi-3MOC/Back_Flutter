@@ -28,9 +28,9 @@ class AppRouter {
         path: '/details_recettes',
         pageBuilder: (context, state) {
           final recetteTitre = state.queryParams['recetteTitre'] as String?;
-          final recetteImageUrl = ''; // Ajoutez le code pour récupérer l'URL de l'image de la recette
-          final recetteDescription = ''; // Ajoutez le code pour récupérer la description de la recette
-          final recetteIngredients = <String>[]; // Ajoutez le code pour récupérer la liste des ingrédients de la recette
+          final recetteImageUrl = '';
+          final recetteDescription = '';
+          final recetteIngredients = <String>[];
 
           return MaterialPage(
             child: recetteTitre != null
