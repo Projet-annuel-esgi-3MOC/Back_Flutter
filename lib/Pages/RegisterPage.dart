@@ -43,7 +43,7 @@ class _RegisterPageState extends State<RegisterPage> {
               TextButton(
                 onPressed: () {
                   Navigator.pop(context);
-                  context.go('');
+                  context.go('/');
                 },
                 child: const Text('OK'),
               ),
@@ -57,7 +57,7 @@ class _RegisterPageState extends State<RegisterPage> {
       }
     } catch (e) {
       setState(() {
-        _errorMessage = 'Failed to register user: $e';
+        _errorMessage = 'Failed to register user hey : $e';
       });
     }
   }
@@ -141,7 +141,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           if (_errorMessage.isNotEmpty)
                             Text(
                               _errorMessage,
-                              style: const TextStyle(color: Colors.red),
+                              style: const TextStyle(color: Colors.black),
                             ),
                         ],
                       ),

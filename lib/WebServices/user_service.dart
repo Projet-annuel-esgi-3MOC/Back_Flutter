@@ -51,7 +51,7 @@ class UserService {
         level: 'Niveau 3',
         creationDate: DateTime(2022, 11, 20),
       ),
-    ];
+     ];
 
     return users;
   }

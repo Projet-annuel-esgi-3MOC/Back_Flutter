@@ -20,7 +20,7 @@ class AuthService {
       print(response.body);
       return message;
     } else {
-      throw Exception('Failed to register user');
+      throw Exception('Failed to register user' + response.body);
     }
   }
 
