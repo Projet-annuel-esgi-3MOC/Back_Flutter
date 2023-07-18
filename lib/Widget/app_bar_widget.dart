@@ -1,5 +1,6 @@
 import 'package:back_web_pa_flutter/Constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   final String title;
@@ -133,18 +134,19 @@ class _CustomAppBarState extends State<CustomAppBar> {
         if (_showProfileOptions)
           PopupMenuButton<String>(
             itemBuilder: (context) => [
-              PopupMenuItem<String>(
+              const PopupMenuItem<String>(
                 value: 'logout',
-                child: const Text('Se déconnecter'),
+                child: Text('Se déconnecter'),
               ),
-              PopupMenuItem<String>(
+              const PopupMenuItem<String>(
                 value: 'editProfile',
-                child: const Text('Modifier le profil'),
+                child: Text('Modifier le profil'),
               ),
             ],
             onSelected: (value) {
               if (value == 'logout') {
-                // Action pour se déconnecter
+                GoRouter.of(context).go(
+                    '/connexion');
               } else if (value == 'editProfile') {
                 // Action pour modifier le profil
               }

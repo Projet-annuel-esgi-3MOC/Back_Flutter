@@ -30,12 +30,29 @@ class _ConnexionPageState extends State<ConnexionPage> {
     if (_formKey.currentState!.validate()) {
       String email = _emailController.text;
       String password = _passwordController.text;
-
       try {
         String? token = await AuthService().loginUser(email, password);
-        if (token != null) {
-        } else {
-        }
+        if (token != null)
+          showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: const Text('Registration Success'),
+            content: Text("Utilisateur connecté"),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  context.go('/');
+                },
+                child: const Text('OK'),
+              ),
+            ],
+          ),
+        );
+      else {
+        setState(() {
+        });
+      }
       } catch (e) {
       }
     }
