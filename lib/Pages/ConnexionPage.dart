@@ -18,6 +18,8 @@ class _ConnexionPageState extends State<ConnexionPage> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
+  String _errorMessage = '';
+
   void onForgotPasswordClicked(BuildContext context) {
     GoRouter.of(context).go('/reinitialisation');
   }
@@ -36,7 +38,7 @@ class _ConnexionPageState extends State<ConnexionPage> {
           showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: const Text('Registration Success'),
+            title: const Text('Connection réussie'),
             content: Text("Utilisateur connecté"),
             actions: [
               TextButton(
@@ -49,12 +51,18 @@ class _ConnexionPageState extends State<ConnexionPage> {
             ],
           ),
         );
-      else {
+    else {
         setState(() {
+          token = 'Failed to register user';
+          print('connexion échoué token vie' + token.toString());
         });
       }
       } catch (e) {
+        setState(() {
+          _errorMessage = 'Failed to register user hey : $e';
+        });
       }
+
     }
   }
   @override

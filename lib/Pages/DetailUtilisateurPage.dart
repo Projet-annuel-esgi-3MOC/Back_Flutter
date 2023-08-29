@@ -5,6 +5,7 @@ import '../Widget/side_menu_widget.dart';
 class DetailUtilisateurPage extends StatelessWidget {
   final String userName;
 
+
   const DetailUtilisateurPage({required this.userName});
 
   @override
@@ -13,13 +14,10 @@ class DetailUtilisateurPage extends StatelessWidget {
       appBar: CustomAppBar(
         title: 'Détails de l\'utilisateur',
         onProfilePressed: () {
-          // Actions à effectuer lorsque l'utilisateur clique sur la photo de profil
         },
         onMenuPressed: () {
-          // Actions à effectuer lorsque l'utilisateur clique sur le bouton de menu
         },
         onSettingsPressed: () {
-          // Actions à effectuer lorsque l'utilisateur clique sur le bouton "Paramètres"
         },
         userName: userName,
         userProfileImageUrl: '',

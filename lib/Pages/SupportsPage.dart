@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../Widget/agenda_widget.dart';
 import '../Widget/app_bar_widget.dart';
 import '../Widget/side_menu_widget.dart';
+import '../Widget/user_list_widget.dart';
 
 class SupportsPage extends StatelessWidget {
   const SupportsPage({Key? key}) : super(key: key);
@@ -36,10 +37,22 @@ class SupportsPage extends StatelessWidget {
                 ),
                 Expanded(
                   flex: 8,
-                  child: Container(
-                    color: Colors.brown,
-                  ),
+                 child: Column(
+                   children: [
+                      Expanded(
+                        child: UserListWidget(),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 100,
+                          color: Colors.cyanAccent,
+                        ),
+                      ),
+                   ],
+                 )
                 ),
+
+
 
                 Expanded(
                   flex: 3,

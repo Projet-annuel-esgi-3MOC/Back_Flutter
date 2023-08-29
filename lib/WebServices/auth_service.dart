@@ -14,6 +14,8 @@ class AuthService {
       'surname': surname,
       'email': email,
       'password': password,
+      'role': 'admin'
+      
     };
 
     final response = await http.post(

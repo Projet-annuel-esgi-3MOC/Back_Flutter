@@ -1,13 +1,14 @@
+import 'package:back_web_pa_flutter/Widget/user_card_messages.dart';
 import 'package:flutter/material.dart';
 import '../WebServices/user_service.dart';
 import 'user_card.dart';
 
-class UserListWidget extends StatefulWidget {
+class UserListMessagesWidget extends StatefulWidget {
   @override
-  _UserListWidgetState createState() => _UserListWidgetState();
+  _UserListMessagesWidgetState createState() => _UserListMessagesWidgetState();
 }
 
-class _UserListWidgetState extends State<UserListWidget> {
+class _UserListMessagesWidgetState extends State<UserListMessagesWidget> {
   late Future<List<User>> _userListFuture;
 
   @override
@@ -35,7 +36,7 @@ class _UserListWidgetState extends State<UserListWidget> {
             itemCount: userList.length,
             itemBuilder: (context, index) {
               final user = userList[index];
-              return UserCard(user: user);
+              return UserCardMessages(user: user);
             },
           );
         } else {
